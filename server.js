@@ -47,6 +47,10 @@ const onListening = () => {
 const port = normalizePort(process.env.PORT || "3040");
 app.set("port", port);
 
+app.get("/",(req,res)=>{
+  res.send("Hello world");
+});
+
 const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
