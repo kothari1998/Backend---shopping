@@ -10,7 +10,7 @@ autoIncrement.initialize(connection);
 
 
 const userSchema=mongoose.Schema({
-user_id:{type:Number,required:true,ref:'user_id',unique:true},
+user_id:{type:Number,ref:'user_id',required:true,unique:true},
 name:{type:String,required:true},    
 email:{type:String,required:true,unique:true},
 password:{type:String,required:true},

@@ -1,10 +1,11 @@
-const bcrypt=require("bcrypt");
+const bcrypt=require("bcrypt-nodejs");
 const jwt=require("jsonwebtoken");
 const uniqid=require("uniqid");
 const User=require("../models/user");
 
 exports.createUser=(req,res,next)=>{
-  bcrypt.hash(req.body.password,10)
+  // bcrypt.hash(req.body.password,10,null,cb)
+  bcrypt.hash(req.body.password,10,null)
 .then(hash=>{
   const user=new User({
   name:req.body.name,
@@ -31,6 +32,7 @@ res.status(201).json({
       });
     });
      });
+    
 };
 
 exports.userLogin=(req,res,next)=>{
