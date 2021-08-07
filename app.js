@@ -9,7 +9,11 @@ const categoryRoutes=require("./api/routes/categories");
 const productRoutes=require("./api/routes/product");
 
 const app=express();
+<<<<<<< HEAD
 mongoose.connect("mongodb+srv://vismay:T@nvi8758@cluster0.ikpvs.mongodb.net/rajan?retryWrites=true&w=majority",{useNewUrlParser:true})
+=======
+mongoose.connect("mongodb+srv://vismay:#password@cluster0.ikpvs.mongodb.net/#database?retryWrites=true&w=majority",{useNewUrlParser:true})
+>>>>>>> 08e80cd61eb4baa06c6de2406733e05bf6f154a0
 .then(()=>{
 console.log("Connected to database");
 })
