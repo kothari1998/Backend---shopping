@@ -13,7 +13,7 @@ destination:(req, file, cb)=>{
   {
     error=null;
   }
-cb(error,"backend/images");
+cb(error,"api/assets/images");
 },
 filename:(req, file, cb)=>{
  const name=file.originalname.toLowerCase().split('').join('-');

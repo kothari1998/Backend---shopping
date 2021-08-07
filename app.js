@@ -5,14 +5,11 @@ const mongoose=require("mongoose");
 
 
 
-const userRoutes=require("./api/routes/user");
-const adminuserRoutes=require("./api/routes/adminuser");
 const categoryRoutes=require("./api/routes/categories");
 const productRoutes=require("./api/routes/product");
-const orderRoutes=require("./api/routes/order");
 
 const app=express();
-mongoose.connect("mongodb+srv://vismay:T@nvi8758@cluster0.ikpvs.mongodb.net/shoppingdemo?retryWrites=true&w=majority",{useNewUrlParser:true})
+mongoose.connect("mongodb+srv://vismay:T@nvi8758@cluster0.ikpvs.mongodb.net/rajan?retryWrites=true&w=majority",{useNewUrlParser:true})
 .then(()=>{
 console.log("Connected to database");
 })
@@ -21,7 +18,7 @@ console.log("connection failed");
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join("backend/images")));
+app.use("/assets/images", express.static(path.join("api/assets/images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -33,10 +30,7 @@ app.use((req, res, next) => {
 
 // autoIncrement.initialize(connection);
 
-app.use("/api/user",userRoutes);
-app.use("/api/admin",adminuserRoutes);
 app.use("/api/category",categoryRoutes);
 app.use("/api/product",productRoutes);
-app.use("/api/order",orderRoutes);
 
 module.exports = app;

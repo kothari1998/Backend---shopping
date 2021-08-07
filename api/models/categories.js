@@ -4,7 +4,7 @@ const uniqueValidator=require("mongoose-unique-validator");
 // Auto Increment ID
 Schema=mongoose.Schema;
 var autoIncrement=require('mongoose-auto-increment');
-const connection=mongoose.createConnection("mongodb+srv://vismay:T@nvi8758@cluster0.ikpvs.mongodb.net/shoppingdemo?retryWrites=true&w=majority",{useNewUrlParser:true});
+const connection=mongoose.createConnection("mongodb+srv://vismay:T@nvi8758@cluster0.ikpvs.mongodb.net/rajan?retryWrites=true&w=majority",{useNewUrlParser:true});
 autoIncrement.initialize(connection);
 
   
